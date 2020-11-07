@@ -1,16 +1,67 @@
-<div class="bot-item">
+<div class="list-container">
   <div class="favorite-container">
-    <img src="../../../assets/images/star.png">
-  </div>
-  <div class="bot-detail">
-    <div class="bot-profile">
-      <img class="bot-image">
-      <p class="bot-name">
-        Botname
-      </p>
+    <div class="bot-item" *ngFor="let bot of favoriteBotList">
+      <div class="favorite-container">
+        <img src="../../../assets/images/star.png" (click)="unsetFavorite(bot)">
+      </div>
+      <div class="bot-detail">
+        <div class="bot-profile">
+          <img class="bot-image" [src]="transform(bot.image)">
+          <p class="bot-name">
+            {{ bot.name }}
+          </p>
+        </div>
+        <div class="created-at">
+          {{ displayCreated(bot.created) }}
+        </div>
+      </div>
     </div>
-    <div class="created-at">
-      Created at 11/09/2019
+  </div>
+  <div class="divider" *ngIf="favoriteBotList.length && notFavoriteBotList.length"></div>
+  <div class=non-favorite-container>
+    <div class="bot-item" *ngFor="let bot of notFavoriteBotList">
+      <div class="favorite-container">
+        <img src="../../../assets/images/star.png" (click)="setFavorite(bot)">
+      </div>
+      <div class="bot-detail">
+        <div class="bot-profile">
+          <img class="bot-image" [src]="transform(bot.image)">
+          <p class="bot-name">
+            {{ bot.name }}
+          </p>
+        </div>
+        <div class="created-at">
+          {{ displayCreated(bot.created) }}
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</div> 
+
+<!-- <div class="cards-container">
+  <div class="favorite-container">
+    <div class="bot-item">
+      <div class="star-icon">
+        <img src="../../../assets/images/star.png">
+      </div>
+      <div class="bot-detail">
+          <img class="bot-image">
+          <p class="bot-name">Bot name</p>
+          <p class="bot-role">Builder</p>
+      </div>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class=non-favorite-container>
+    <div class="bot-item">
+      <div class="star-icon">
+        <img src="../../../assets/images/favorite.png">
+      </div>
+      <div class="bot-detail">
+          <img class="bot-image">
+          <p class="bot-name">Bot name</p>
+          <p class="bot-role">Builder</p>
+      </div>
+    </div>
+  </div>
+</div>   -->

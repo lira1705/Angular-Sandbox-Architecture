@@ -6,21 +6,26 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ListManagerComponent } from './home/list-manager/list-manager.component';
 import { BotListComponent } from './home/bot-list/bot-list.component';
-import { BotCardsComponent } from './home/bot-cards/bot-cards.component';
+import { BotListService } from './shared/services/bot-list.service';
+import { BotListSandbox } from './home/bot-list/bot-list.sandbox';
+import { BotListController } from './home/bot-list.controller';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ListManagerComponent,
-    BotListComponent,
-    BotCardsComponent
+    BotListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    BotListService,
+    BotListSandbox,
+    BotListController
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

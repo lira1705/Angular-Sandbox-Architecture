@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ListOrder } from '../bot-list.controller';
+import { BotListSandbox } from '../bot-list/bot-list.sandbox';
 
 @Component({
   selector: 'app-list-manager',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListManagerComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private botListSandbox: BotListSandbox
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  public orderByDate(): void {
+    this.botListSandbox.setListOrder(ListOrder.ORDER_BY_DATE);
+  }
+
+  public orderByName(): void {
+    this.botListSandbox.setListOrder(ListOrder.ORDER_BY_NAME);
   }
 
 }
