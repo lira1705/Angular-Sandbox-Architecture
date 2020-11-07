@@ -43,9 +43,10 @@
     border-radius: get-vw(12px);
     border: 1px solid #d5e0e8;
     font-size: get-vw(15px);
-    padding: 20px; 
+    padding: get-vw(20px); 
     width: get-vw(430px);
-    height: 15px;
+    height: get-vw(15px);
     margin-right: get-vw(10px);
+    max-height: get-vw(55px);
   }    
 }

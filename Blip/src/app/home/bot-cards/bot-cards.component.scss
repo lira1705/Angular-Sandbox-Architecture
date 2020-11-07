@@ -1,0 +1,51 @@
+@import "../../../assets/styles/utils/functions.scss";
+
+.bot-item {
+  height: get-vw(260px);
+  width: get-vw(260px);
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  box-shadow: 0 get-vw(4px) get-vw(8px) 0 rgba(0, 0, 0, 0.2), 0 get-vw(6px) get-vw(20px) 0 rgba(0, 0, 0, 0.19);
+  box-sizing: border-box;
+  border-radius: get-vw(12px);
+  padding: get-vw(17px);
+
+  .favorite-container {
+    align-self: flex-start;
+    img {
+      height: get-vw(33px);
+      width: get-vw(33px);
+    }
+  }
+
+  .bot-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .bot-image {
+      display: inline-block;
+      width: get-vw(78px);
+      height: get-vw(78px);
+      border-radius: 50%;
+      background-color: blue;
+    
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+    }
+
+    .bot-name {
+      font-size: get-vw(17px);
+      margin-top: get-vw(28px);
+      color: #7e8b91;
+    }
+
+    .bot-role {
+      font-size: get-vw(13px);
+      margin-top: get-vw(16px);
+      color: #b8bfc8;
+    }
+  }
+}
