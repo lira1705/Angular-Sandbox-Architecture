@@ -1,11 +1,17 @@
 @import '../../assets/styles/functions.scss';
 
+:host {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
 .home {
-  background-color:#f5f8f9;
   height:100%;
   width: 100%;
-  margin: get-vw(46px) get-vw(92px) get-vw(133px) get-vw(92px);
+  margin: get-vw(43px) get-vw(80px) get-vw(127px) get-vw(78px);
 
   .list-manager {
+
   }
 }

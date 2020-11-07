@@ -3,11 +3,12 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  position: relative;
+  background-color:#f5f8f9;
+  
 }
 .header {
   width: 100%;
-  height: get-vw(50px);
+  height: get-vw(62px);
   background-color: #1c1c35;
   display: flex;
   align-items: center;

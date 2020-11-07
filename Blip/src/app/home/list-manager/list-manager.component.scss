@@ -1,3 +1,48 @@
-p {
+@import "../../../assets/styles/functions.scss";
+
+.list-manager-container {
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  p {
+    width: 100%;
+    font-size: get-vw(34px);
+    font-weight: bold;
+  }
+
+  .search-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .block-view {
+    width: get-vw(45px);
+    height: get-vw(45px);
+    margin-right: get-vw(15px);
+  }
+
+  .list-view {
+    width: get-vw(45px);
+    height: get-vw(45px);
+  }
+
+  .order-name-button {
+    margin-right: get-vw(10px);
+  }
+
+  .order-creation-button {
+    margin-right: get-vw(17px);
+  }
+
+  input {
+    border-radius: get-vw(12px);
+    border: 1px solid #d5e0e8;
+    font-size: get-vw(15px);
+    padding: 20px; 
+    width: get-vw(430px);
+    height: 15px;
+    margin-right: get-vw(10px);
+  }    
 }
