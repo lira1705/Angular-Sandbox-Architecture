@@ -1,20 +1,23 @@
-@import "../../../assets/styles/functions.scss";
+@import "../../../assets/styles/utils/functions.scss";
 
 .list-manager-container {
   width: 100%;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  height: get-vw(64px);
 
   p {
     width: 100%;
-    font-size: get-vw(34px);
+    font-size: get-vw(40px);
     font-weight: bold;
+    color: #575e6f;
+    align-self: flex-end;
   }
 
   .search-container {
     display: flex;
     flex-direction: row;
+    align-self: flex-start;
   }
 
   .block-view {

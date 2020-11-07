@@ -1,5 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:500,700");
+@import "./assets/styles/utils/utils.scss";
 @import "./assets/styles/components/components.scss";
+
+* {
+  font-family: 'Montserrat';
+}
+
+p {
+  margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
 
 body{
   height: 100vh;

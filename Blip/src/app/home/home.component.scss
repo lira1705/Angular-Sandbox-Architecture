@@ -1,4 +1,4 @@
-@import '../../assets/styles/functions.scss';
+@import '../../assets/styles/utils/functions.scss';
 
 :host {
   display: flex;
@@ -12,6 +12,13 @@
   margin: get-vw(43px) get-vw(80px) get-vw(127px) get-vw(78px);
 
   .list-manager {
+    margin-bottom: get-vw(58px);
+  }
 
+  p.list-title {
+    width: 100%;
+    font-size: get-vw(34px);
+    font-weight: bold;
+    color: #63749b;
   }
 }
