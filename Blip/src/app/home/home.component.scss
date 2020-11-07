@@ -1,0 +1,11 @@
+@import '../../assets/styles/functions.scss';
+
+.home {
+  background-color:#f5f8f9;
+  height:100%;
+  width: 100%;
+  margin: get-vw(46px) get-vw(92px) get-vw(133px) get-vw(92px);
+
+  .list-manager {
+  }
+}
