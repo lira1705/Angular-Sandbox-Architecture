@@ -32,6 +32,10 @@
       justify-content: space-between;
       box-sizing: border-box;
       align-items: center;
+
+      &:hover {
+        box-shadow: 0 get-vw(2px) get-vw(4px) 0 rgba(0, 0, 0, 0.2), 0 get-vw(5px) get-vw(10px) 0 rgba(0, 0, 0, 0.19);
+      }
   
       .bot-profile {
         display: flex;
@@ -89,6 +93,10 @@
       cursor: pointer;
       margin-right: get-vw(26px);
       margin-bottom: get-vw(26px);
+
+      &:hover {
+        box-shadow: 0 get-vw(2px) get-vw(4px) 0 rgba(0, 0, 0, 0.2), 0 get-vw(5px) get-vw(10px) 0 rgba(0, 0, 0, 0.19);
+      }
     
       .star-icon {
         align-self: flex-start;

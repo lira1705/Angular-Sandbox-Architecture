@@ -20,11 +20,15 @@
     border-radius: get-vw(10px);
     white-space: nowrap;
     font-weight: bold;
+
+    &:hover {
+      background-color: darken( #1ac4d9, 15%);
+    }
   }
 
   &.fab-button {
-    width: get-vw(85px);
-    height: get-vw(85px);
+    width: get-vw(75px);
+    height: get-vw(75px);
     border-radius: 50%;
     background-color: #1ac4d9;
     text-align:center;
