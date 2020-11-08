@@ -4,6 +4,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { BotListSandbox } from './bot-list.sandbox';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { BotDetailService } from 'src/app/shared/services/bot-detail.service';
 
 @Component({
   selector: 'app-bot-list',
@@ -21,10 +22,10 @@ export class BotListComponent implements OnDestroy {
   constructor(
     private sanitizer: DomSanitizer,
     private botListSandbox: BotListSandbox,
-    private router: Router
+    private router: Router,
+    private botDetailService: BotDetailService
   ) {
     this.isListSubscription = this.botListSandbox.getIsListMode().subscribe(isListView => {
-      console.log('here');
       this.isListView = isListView;
     })
     this.favoriteListSubscription = this.botListSandbox.getFavoriteBotList().subscribe(botList => {
@@ -68,7 +69,8 @@ export class BotListComponent implements OnDestroy {
     this.botListSandbox.unsetFavorite(bot);
   }
 
-  public changeRoute(): void {
+  public accessBotDetail(bot: BotModel): void {
+    this.botDetailService.setBot(bot);
     this.router.navigate(['detail']);
   }
 }
