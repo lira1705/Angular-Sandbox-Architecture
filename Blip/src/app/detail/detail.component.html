@@ -20,7 +20,7 @@
     <div class="bot-analytics">
       <div class="region-panel analytics-panel">
         <p class="region-title title">Region and idiom</p>
-        <p class="region-value value">EUA - English (EN)</p>
+        <p class="region-value value">{{ languageDetail }}</p>
         <p class="timezone-title title">Timezone</p>
         <p class="timezone-value">(UTC - 03:00) Brasília</p>
       </div>
@@ -29,8 +29,8 @@
           <img src="../../assets/images/user.png">
         </div>
         <div class="content-data">
-          <p class="data-value">1000</p>
-          <p class="data-type">Usuários ativos</p>
+          <p class="data-value">{{ activeUsers }}</p>
+          <p class="data-type">Active users</p>
         </div>
       </div>
       <div class="received-messages-panel analytics-panel panel-content">
@@ -38,8 +38,8 @@
           <img src="../../assets/images/union.png">
         </div>
         <div class="content-data">
-          <p class="data-value">1000</p>
-          <p class="data-type">Mensagens recebidas</p>
+          <p class="data-value">{{ receivedMessages }}</p>
+          <p class="data-type">Received messages</p>
         </div>
       </div>
       <div class="sent-messages-panel analytics-panel panel-content">
@@ -47,8 +47,8 @@
           <img src="../../assets/images/sent.png">
         </div>
         <div class="content-data">
-          <p class="data-value">1000</p>
-          <p class="data-type">Mensagens enviadas</p>
+          <p class="data-value">{{ sentMessages }}</p>
+          <p class="data-type">Sent messages</p>
         </div>
       </div>
   </div>

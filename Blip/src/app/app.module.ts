@@ -13,6 +13,8 @@ import { FormsModule } from '@angular/forms';
 import { DetailComponent } from './detail/detail.component';
 import { ListManagerSandbox } from './home/list-manager/list-manager.sandbox';
 import { ListManagerController } from './home/list-manager/list-manager.controller';
+import { DetailSandbox } from './detail/detail.sandbox';
+import { DetailController } from './detail/detail.controller';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { ListManagerController } from './home/list-manager/list-manager.controll
     BotListSandbox,
     BotListController,
     ListManagerSandbox,
-    ListManagerController
+    ListManagerController,
+    DetailSandbox,
+    DetailController
   ],
   bootstrap: [AppComponent]
 })
