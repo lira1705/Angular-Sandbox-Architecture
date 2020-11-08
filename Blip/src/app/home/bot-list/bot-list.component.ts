@@ -12,18 +12,23 @@ import { ListOrder } from '../bot-list.controller';
 export class BotListComponent implements OnInit {
   public favoriteBotList: BotModel[] = [];
   public notFavoriteBotList: BotModel[] = [];
+  public isListView: boolean;
 
   constructor(
     private sanitizer: DomSanitizer,
     private botListSandbox: BotListSandbox
-  ) { 
+  ) {
+    this.botListSandbox.getIsListMode().subscribe(isListView => {
+      console.log(isListView);
+      this.isListView = isListView;
+    })
     this.botListSandbox.getFavoriteBotList().subscribe(botList => {
       this.favoriteBotList = botList;
     });
     this.botListSandbox.getNotFavoriteBotList().subscribe(botList => {
       this.notFavoriteBotList = botList;
     });
-    this.botListSandbox.requestBotList();
+    this.botListSandbox.setupBotList();
   }
 
   ngOnInit(): void {

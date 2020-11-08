@@ -7,11 +7,17 @@ export enum ListOrder {
   ORDER_BY_NAME = 'name'
 }
 
+export enum ListMode {
+  CARDS = 'cards',
+  LIST = 'list'
+}
+
 @Injectable()
 export class BotListController {
 
   private readonly favoriteListSubject: Subject<BotModel[]> = new Subject<BotModel[]>();
   private readonly notFavoriteListSubject: Subject<BotModel[]> = new Subject<BotModel[]>();
+  private readonly isListModeSubject: Subject<boolean> = new Subject<boolean>();
   private readonly map = new Map<string, () => void>();
   private botList: BotModel[] = [];
   private favoriteList: BotModel[] = [];
@@ -30,11 +36,24 @@ export class BotListController {
     return this.notFavoriteListSubject.asObservable();
   }
 
+  public subscribeIsListMode(): Observable<boolean> {
+    return this.isListModeSubject.asObservable();
+  }
+
+  public setIsListMode(listMode: ListMode): void {
+    if (listMode !== ListMode.LIST) {
+      this.isListModeSubject.next(false);
+    } else {
+      this.isListModeSubject.next(true);
+    }
+  }
+
   public setBotList(botList: BotModel[]): void {
     this.botList = botList;
     this.favoriteList = this.botList.filter(item => item.favorite === true) || [];
     this.notFavoriteList = this.botList.filter(item => item.favorite !== true) || [];
     this.sortLists();
+    this.isListModeSubject.next(true);
     this.favoriteListSubject.next(this.favoriteList);
     this.notFavoriteListSubject.next(this.notFavoriteList);
   }

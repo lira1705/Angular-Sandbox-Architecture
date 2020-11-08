@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ListOrder } from '../bot-list.controller';
+import { ListMode, ListOrder } from '../bot-list.controller';
 import { BotListSandbox } from '../bot-list/bot-list.sandbox';
 
 @Component({
@@ -22,6 +22,14 @@ export class ListManagerComponent implements OnInit {
 
   public orderByName(): void {
     this.botListSandbox.setListOrder(ListOrder.ORDER_BY_NAME);
+  }
+
+  public changeViewToList(): void {
+    this.botListSandbox.setListMode(ListMode.LIST);
+  }
+
+  public changeViewToCards(): void {
+    this.botListSandbox.setListMode(ListMode.CARDS);
   }
 
 }
