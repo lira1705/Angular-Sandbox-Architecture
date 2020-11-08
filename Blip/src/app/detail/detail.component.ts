@@ -1,6 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { Router } from '@angular/router';
+import { Component, OnDestroy} from '@angular/core';
 import { Subscription } from 'rxjs';
 import { BotModel } from '../shared/models/bot-list.model';
 import { DetailSandbox } from './detail.sandbox';
@@ -20,8 +18,6 @@ export class DetailComponent implements OnDestroy {
   private botSubscription: Subscription;
 
   constructor(
-    private router: Router,
-    private sanitizer: DomSanitizer,
     private detailSandbox: DetailSandbox
   ) {
       this.botSubscription = this.detailSandbox.getBot().subscribe(bot => {
@@ -36,14 +32,6 @@ export class DetailComponent implements OnDestroy {
     if (this.botSubscription) {
       this.botSubscription.unsubscribe();
     }
-  }
-
-  public changeRoute(): void {
-    this.router.navigate(['']);
-  }
-
-  public transform(base64Image: string): SafeResourceUrl {
-    return this.sanitizer.bypassSecurityTrustResourceUrl(base64Image);
   }
 
   public displayCreated(date: Date): string {
