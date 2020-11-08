@@ -9,6 +9,7 @@ import { BotListComponent } from './home/bot-list/bot-list.component';
 import { BotListService } from './shared/services/bot-list.service';
 import { BotListSandbox } from './home/bot-list/bot-list.sandbox';
 import { BotListController } from './home/bot-list.controller';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { BotListController } from './home/bot-list.controller';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     BotListService,

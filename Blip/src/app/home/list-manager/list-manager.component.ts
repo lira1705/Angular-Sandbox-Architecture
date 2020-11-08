@@ -9,6 +9,8 @@ import { BotListSandbox } from '../bot-list/bot-list.sandbox';
 })
 export class ListManagerComponent implements OnInit {
 
+  public searchText: string = '';
+
   constructor(
     private botListSandbox: BotListSandbox
   ) { }
@@ -30,6 +32,10 @@ export class ListManagerComponent implements OnInit {
 
   public changeViewToCards(): void {
     this.botListSandbox.setListMode(ListMode.CARDS);
+  }
+
+  public search(text: string): void {
+    this.botListSandbox.search(text);
   }
 
 }

@@ -45,4 +45,8 @@ export class BotListSandbox {
   public setListMode(listMode: ListMode): void {
     this.botListController.setIsListMode(listMode);
   }
+
+  public search(text: string): void {
+    this.botListController.search(text);
+  }
 }

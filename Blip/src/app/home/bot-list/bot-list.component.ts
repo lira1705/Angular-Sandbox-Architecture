@@ -19,7 +19,6 @@ export class BotListComponent implements OnInit {
     private botListSandbox: BotListSandbox
   ) {
     this.botListSandbox.getIsListMode().subscribe(isListView => {
-      console.log(isListView);
       this.isListView = isListView;
     })
     this.botListSandbox.getFavoriteBotList().subscribe(botList => {

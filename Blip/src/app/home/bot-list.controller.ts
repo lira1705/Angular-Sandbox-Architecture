@@ -50,9 +50,9 @@ export class BotListController {
 
   public setBotList(botList: BotModel[]): void {
     this.botList = botList;
+    this.botList = this.orderByName(this.botList);
     this.favoriteList = this.botList.filter(item => item.favorite === true) || [];
     this.notFavoriteList = this.botList.filter(item => item.favorite !== true) || [];
-    this.sortLists();
     this.isListModeSubject.next(true);
     this.favoriteListSubject.next(this.favoriteList);
     this.notFavoriteListSubject.next(this.notFavoriteList);
@@ -62,6 +62,7 @@ export class BotListController {
     bot.favorite = true;
     this.notFavoriteList = this.notFavoriteList.filter(item => item.id !== bot.id);
     this.favoriteList.push(bot);
+    this.updateBotList(bot);
     if (this.listOrderView === ListOrder.ORDER_BY_DATE) {
       this.favoriteList = this.orderByDate(this.favoriteList);
     } else {
@@ -75,6 +76,7 @@ export class BotListController {
     bot.favorite = false;
     this.favoriteList = this.favoriteList.filter(item => item.id !== bot.id);
     this.notFavoriteList.push(bot);
+    this.updateBotList(bot);
     if (this.listOrderView === ListOrder.ORDER_BY_DATE) {
       this.notFavoriteList = this.orderByDate(this.notFavoriteList);
     } else {
@@ -82,6 +84,11 @@ export class BotListController {
     }
     this.notFavoriteListSubject.next(this.notFavoriteList);
     this.favoriteListSubject.next(this.favoriteList);
+  }
+
+  private updateBotList(bot: BotModel): void {
+    const botIndex = this.botList.findIndex(item => item.id === bot.id);
+    this.botList[botIndex] = bot;
   }
 
   public orderListsByDate(): void {
@@ -93,6 +100,7 @@ export class BotListController {
       this.notFavoriteList = this.orderByDate(this.notFavoriteList);
       this.notFavoriteListSubject.next(this.notFavoriteList);
     }
+    this.botList = this.orderByDate(this.botList);
   }
 
   public orderListsByName(): void {
@@ -104,6 +112,7 @@ export class BotListController {
       this.notFavoriteList = this.orderByName(this.notFavoriteList);
       this.notFavoriteListSubject.next(this.notFavoriteList);
     }
+    this.botList = this.orderByName(this.botList);
   }
 
 
@@ -141,5 +150,23 @@ export class BotListController {
   public setListOrder(order: ListOrder): void {
     this.listOrderView = order;
     this.sortLists();
+  }
+
+  public search(text: string): void {
+    const searchString = text.toLowerCase();
+    if (this.favoriteList) {
+      this.favoriteList = this.botList.filter(item => {
+        const name  = item.name.toLowerCase();
+        return name.includes(searchString) && item.favorite;
+      });
+      this.favoriteListSubject.next(this.favoriteList);
+    }
+    if (this.notFavoriteList) {
+      this.notFavoriteList = this.botList.filter(item => {
+        const name  = item.name.toLowerCase();
+        return name.includes(searchString) && !item.favorite;
+      });
+      this.notFavoriteListSubject.next(this.notFavoriteList);
+    }
   }
 }
