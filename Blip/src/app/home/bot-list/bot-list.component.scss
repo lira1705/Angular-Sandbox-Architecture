@@ -3,22 +3,19 @@
 
 
 .list-container {
-  .divider {
-    border-bottom: 1px solid #dde7ec;
-    height: get-vw(55px);
-    margin-bottom: get-vw(55px);
-  }
+  margin-top: get-vw(108px);
+
   .bot-item {
     height: get-vw(85px);
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    margin-bottom: get-vw(20px);
+    margin-bottom: get-vw(27px);
   
       img {
-        height: get-vw(33px);
-        width: get-vw(33px);
+        height: get-vw(35px);
+        width: get-vw(35px);
         cursor: pointer;
       }
     .bot-detail {
@@ -27,7 +24,7 @@
       padding-right: get-vw(34px);
       background-color: #ffffff;
       width: get-vw(1660px);
-      box-shadow: 0 get-vw(4px) get-vw(8px) 0 rgba(0, 0, 0, 0.2), 0 get-vw(6px) get-vw(20px) 0 rgba(0, 0, 0, 0.19);
+      box-shadow: 0 get-vw(1px) get-vw(2px) 0 rgba(0, 0, 0, 0.2), 0 get-vw(2px) get-vw(5px) 0 rgba(0, 0, 0, 0.19);
       height: 100%;
       border-radius: get-vw(12px);
       display: flex;
@@ -39,12 +36,12 @@
       .bot-profile {
         display: flex;
         flex-direction: row;
-        height: get-vw(40px);
+        height: get-vw(42px);
         align-items: center;
   
         .bot-image {
           display: inline-block;
-          width: get-vw(40px);
+          width: get-vw(42px);
           height: 100%;
           border-radius: 50%;
           background-color: blue;
@@ -56,19 +53,21 @@
   
         .bot-name {
           margin-left: get-vw(12px);
-          font-size: get-vw(14px);
+          font-size: get-vw(16px);
           color: #576871;
         }
       }
   
       .created-at {
         color: #738192;
+        font-size: get-vw(16px)
       }
     }
   }
 }
 
 .cards-container {
+  margin-top: get-vw(43px);
   display: flex;
   flex-direction: column;
 
@@ -83,7 +82,7 @@
       display: flex;
       flex-direction: column;
       background-color: #ffffff;
-      box-shadow: 0 get-vw(4px) get-vw(8px) 0 rgba(0, 0, 0, 0.2), 0 get-vw(6px) get-vw(20px) 0 rgba(0, 0, 0, 0.19);
+      box-shadow: 0 get-vw(1px) get-vw(2px) 0 rgba(0, 0, 0, 0.2), 0 get-vw(2px) get-vw(5px) 0 rgba(0, 0, 0, 0.19);
       box-sizing: border-box;
       border-radius: get-vw(12px);
       padding: get-vw(17px);
@@ -130,10 +129,10 @@
       }
     }
   }
+}
 
-  .divider {
-    border-bottom: 1px solid #dde7ec;
-    height: get-vw(55px);
-    margin-bottom: get-vw(55px);
-  }
+.divider {
+  border-bottom: 1px solid #dde7ec;
+  height: get-vw(29px);
+  margin-bottom: get-vw(55px);
 }
