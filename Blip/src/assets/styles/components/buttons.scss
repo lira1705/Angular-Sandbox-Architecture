@@ -21,4 +21,26 @@
     white-space: nowrap;
     font-weight: bold;
   }
+
+  &.fab-button {
+    width: get-vw(85px);
+    height: get-vw(85px);
+    border-radius: 50%;
+    background-color: #1ac4d9;
+    text-align:center;
+    z-index: 999;
+    transition:.3s;
+
+    &:focus {
+      transform:scale(1.1);
+      transform:rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+    }
+
+    img {
+      width: get-vw(30px);
+      height: get-vw(30px);
+    }
+  }
 }

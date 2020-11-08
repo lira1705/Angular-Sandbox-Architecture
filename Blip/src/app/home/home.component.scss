@@ -21,4 +21,10 @@
     font-weight: bold;
     color: #63749b;
   }
+
+  .fab-button {
+    position: fixed;
+    right: get-vw(47px);
+    bottom: get-vw(23px);
+  }
 }
