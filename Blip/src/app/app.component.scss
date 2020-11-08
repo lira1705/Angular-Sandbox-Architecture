@@ -7,7 +7,25 @@
   .content {
     margin-top: get-vw(65px);
   }
-  
+
+  .footer {
+    background-color:#f5f8f9;
+    height: get-vw(117px);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    p {
+      margin-top: get-vw(31px);
+      white-space: pre;
+      font-size: get-vw(14px);
+      color: #939bac;
+
+      &.terms-of-use {
+        font-weight: bold;
+      }
+    }
+  }  
 }
 .header {
   width: 100%;
