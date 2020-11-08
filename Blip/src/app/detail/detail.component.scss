@@ -66,12 +66,14 @@
     display: flex;
     flex-direction: row;
     margin-top: get-vw(34px);
+    border-bottom: 1px solid #dde7ec;
 
     .bot-analytics {
-      width: get-vw(1293px);
+      width: get-vw(1364px);
       display: flex;
       flex-direction: row;
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
+      margin-bottom: get-vw(62px);
 
       .analytics-panel {
         background-color: #ffffff;
@@ -80,20 +82,139 @@
       }
 
       .region-panel {
-        width: get-vw(409px);
+        padding: get-vw(49px) get-vw(55px) get-vw(120px) get-vw(55px);
+        width: get-vw(433px);
         height: get-vw(295px);
-        margin-right: get-vw(29px);
+        margin-right: get-vw(31px);
+        margin-bottom: get-vw(34px);
+        box-sizing: border-box;
+
+        p {
+          font-size: get-vw(16px);
+
+          &.region-title {
+            color: #b1b8bc;
+          }
+
+          &.timezone-title {
+            color: #959fa4;
+          }
+  
+          &.region-value {
+            color: #586871;
+          }
+  
+          &.timezone-value {
+            color:#5c6c75;
+          }
+  
+
+          &.title {
+            margin-bottom: get-vw(18px);
+          }
+
+          &.value {
+            margin-bottom: get-vw(31px);
+          }
+        }
       }
 
       .active-users-panel {
-        width: get-vw(850px);
+        width: get-vw(900px);
         height: get-vw(296px);
+      }
+
+      .received-messages-panel {
+        width: get-vw(742px);
+        height: get-vw(314px);
+        margin-right:get-vw(33px);
+      }
+
+      .sent-messages-panel {
+        height: get-vw(313px);
+        width: get-vw(589px);
+
+      }
+
+      .panel-content {
+        display: flex;
+        flex-direction: row;
+        padding: get-vw(114px) 0 0 get-vw(47px);
+        box-sizing: border-box;
+
+        .img-container {
+          width: get-vw(82px);
+          height: get-vw(82px);
+          border-radius: 50%;
+          text-align:center;
+
+          &.active-users-img {
+            background-color: #2cc3d3;
+          }
+
+          &.received-messages-img {
+            background-color: #4dcb7b;
+          }
+
+          &.sent-messages-img {
+            background-color: #517bf2;
+          }
+
+          img {
+            margin-top: get-vw(17px);
+            width: get-vw(41px);
+            height: get-vw(49px);
+            display: inline-block;
+
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+          }
+        }
+
+        .content-data {
+          display: flex;
+          flex-direction: column;
+          margin-left: get-vw(24px);
+          margin-top: get-vw(8px);
+
+          .data-value {
+            font-size: get-vw(26px);
+            color: #52636c;
+          }
+
+          .data-type {
+            font-size: get-vw(17px);
+            color: #67767e;
+          }
+        }
       }
     }
 
     .status-account {
-      width: get-vw(335px);
+      width: get-vw(400px);
       margin-left: get-vw(25px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .status-account-img {
+        height: get-vw(336px);
+        width: get-vw(364px);
+        margin-bottom: get-vw(34px);
+      }
+
+      .status-account-title {
+        font-size: get-vw(18px);
+        color: #8ca0b3;
+        margin-bottom: get-vw(14px);
+      }
+
+      .status-account-value {
+        font-size: get-vw(25px);
+        color: #56616e;
+        margin-bottom: get-vw(44px);
+      }
     }
   }
 }

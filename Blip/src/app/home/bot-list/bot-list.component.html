@@ -1,10 +1,10 @@
 <div class="list-container" *ngIf="isListView">
   <div class="favorite-container">
-    <div class="bot-item" *ngFor="let bot of favoriteBotList" (click)="accessBotDetail(bot)">
+    <div class="bot-item" *ngFor="let bot of favoriteBotList">
       <div class="favorite-container">
         <img src="../../../assets/images/star.png" (click)="unsetFavorite(bot)">
       </div>
-      <div class="bot-detail">
+      <div class="bot-detail" (click)="accessBotDetail(bot)">
         <div class="bot-profile">
           <img class="bot-image" [src]="transform(bot.image)">
           <p class="bot-name">
@@ -21,11 +21,11 @@
   <div class="divider" *ngIf="favoriteBotList.length && notFavoriteBotList.length"></div>
 
   <div class=non-favorite-container>
-    <div class="bot-item" *ngFor="let bot of notFavoriteBotList" (click)="accessBotDetail(bot)">
+    <div class="bot-item" *ngFor="let bot of notFavoriteBotList">
       <div class="favorite-container">
         <img src="../../../assets/images/favorite.png" (click)="setFavorite(bot)">
       </div>
-      <div class="bot-detail">
+      <div class="bot-detail" (click)="accessBotDetail(bot)">
         <div class="bot-profile">
           <img class="bot-image" [src]="transform(bot.image)">
           <p class="bot-name">
@@ -41,11 +41,11 @@
 </div> 
 <div class="cards-container" *ngIf="!isListView">
   <div class="container">
-    <div class="bot-item" *ngFor="let bot of favoriteBotList" (click)="accessBotDetail(bot)">
+    <div class="bot-item" *ngFor="let bot of favoriteBotList">
       <div class="star-icon">
         <img src="../../../assets/images/star.png" (click)="unsetFavorite(bot)">
       </div>
-      <div class="bot-detail">
+      <div class="bot-detail" (click)="accessBotDetail(bot)">
           <img class="bot-image" [src]="transform(bot.image)">
           <p class="bot-name">{{ bot.name }}</p>
           <p class="bot-role">{{ bot.template }}</p>
@@ -56,11 +56,11 @@
   <div class="divider" *ngIf="favoriteBotList.length && notFavoriteBotList.length"></div>
 
   <div class=container>
-    <div class="bot-item" *ngFor="let bot of notFavoriteBotList" (click)="accessBotDetail(bot)">
+    <div class="bot-item" *ngFor="let bot of notFavoriteBotList" >
       <div class="star-icon">
         <img src="../../../assets/images/favorite.png" (click)="setFavorite(bot)">
       </div>
-      <div class="bot-detail">
+      <div class="bot-detail" (click)="accessBotDetail(bot)">
           <img class="bot-image" [src]="transform(bot.image)">
           <p class="bot-name">{{ bot.name }}</p>
           <p class="bot-role">{{ bot.template }}</p>
