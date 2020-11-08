@@ -9,10 +9,10 @@
 .home {
   height:100%;
   width: 100%;
-  margin: get-vw(43px) get-vw(80px) get-vw(127px) get-vw(78px);
+  margin: get-vw(46px) get-vw(95px) get-vw(127px) get-vw(91px);
 
   .list-manager {
-    margin-bottom: get-vw(58px);
+    margin-bottom: get-vw(63px);
   }
 
   p.list-title {
@@ -23,10 +23,6 @@
   }
 
   .bot-list-view {
-    margin-top: get-vw(100px);
-  }
-
-  .bot-cards-view {
-    margin-top: get-vw(34px);
+    margin-top: get-vw(108px);
   }
 }

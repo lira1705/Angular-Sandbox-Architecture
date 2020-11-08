@@ -4,11 +4,11 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  height: get-vw(64px);
+  height: get-vw(68px);
 
   p {
     width: 100%;
-    font-size: get-vw(40px);
+    font-size: get-vw(42px);
     font-weight: bold;
     color: #575e6f;
     align-self: flex-end;
@@ -23,14 +23,16 @@
   .block-view {
     width: get-vw(45px);
     height: get-vw(45px);
-    margin-right: get-vw(15px);
+    margin-right: get-vw(12px);
     cursor: pointer;
+    align-self: center;
   }
 
   .list-view {
     width: get-vw(45px);
     height: get-vw(45px);
     cursor: pointer;
+    align-self: center;
   }
 
   .order-name-button {

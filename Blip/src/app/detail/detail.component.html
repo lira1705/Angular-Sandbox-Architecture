@@ -1,1 +1,27 @@
-<button (click)="changeRoute()">hey</button>
+<div class="detail-container">
+  <!-- <button (click)="changeRoute()">hey</button>  -->
+  <div class="bot-profile">
+    <div class="bot-avatar">
+      <img class="bot-image" [src]="transform(bot.image)">
+      <div class=bot-id>
+        <p class="bot-name-title">
+          Botname
+        </p>
+        <p class="bot-name">
+          id: {{ bot.name }}
+        </p>
+      </div>
+    </div>
+    <div class="created-at">
+      {{ displayCreated(bot.created) }}
+    </div>
+  </div>
+  <div class="bot-details">
+    <div class="bot-analytics">
+      <div class="region-panel analytics-panel"></div>
+      <div class="active-users-panel analytics-panel"></div>
+      <div class="received-messages-panel analytics-panel"></div>
+      <div class="sent-messages-panel analytics-panel"></div>
+  </div>
+  <div class="status-account"></div>
+</div>

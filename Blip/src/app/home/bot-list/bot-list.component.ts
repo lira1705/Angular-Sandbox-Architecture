@@ -58,7 +58,7 @@ export class BotListComponent implements OnDestroy {
     const day = date.getUTCDate();
     const month = date.getUTCMonth() + monthFixer;
     const year = date.getUTCFullYear();
-    return day + "/" + month + "/" + year;
+    return `Created at ${day}/${month}/${year}`;
   }
 
   public setFavorite(bot: BotModel): void {

@@ -1,0 +1,99 @@
+@import '../../assets/styles/utils/functions.scss';
+
+:host {
+  display: flex;
+  flex: 1;
+}
+
+.detail-container {
+  height:100%;
+  width: 100%;
+  margin: get-vw(43px) get-vw(66px) 0 get-vw(82px);
+
+  .bot-profile {
+    display: flex;
+    flex-direction: row;
+    height: get-vw(78px);
+    border-bottom: 1px solid #cedbe0;
+    justify-content: space-between;
+    padding-bottom: get-vw(45px);
+
+    .bot-avatar {
+      display: flex;
+      flex-direction: row;
+
+      .bot-image {
+        display: inline-block;
+        width: get-vw(78px);
+        
+        border-radius: 50%;
+        background-color: blue;
+      
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+      }
+
+      .bot-id {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: get-vw(13px);
+        margin-top: get-vw(2px);
+
+        .bot-name-title {
+          font-size: get-vw(24px);
+          color: #56616e;
+          font-weight: bold;
+        }
+
+        .bot-name {
+          padding-top: get-vw(9px);
+          font-size: get-vw(15px);
+          color: #a7b6c4;
+        }
+      }
+    }
+
+    .created-at {
+      align-self: center;
+      color: #acbbc8;
+      font-size: get-vw(15px);
+    }
+  }
+
+  .bot-details {
+    display: flex;
+    flex-direction: row;
+    margin-top: get-vw(34px);
+
+    .bot-analytics {
+      width: get-vw(1293px);
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+
+      .analytics-panel {
+        background-color: #ffffff;
+        box-shadow: 0 get-vw(4px) get-vw(8px) 0 rgba(0, 0, 0, 0.2), 0 get-vw(6px) get-vw(20px) 0 rgba(0, 0, 0, 0.19);
+        border-radius: get-vw(12px);
+      }
+
+      .region-panel {
+        width: get-vw(409px);
+        height: get-vw(295px);
+        margin-right: get-vw(29px);
+      }
+
+      .active-users-panel {
+        width: get-vw(850px);
+        height: get-vw(296px);
+      }
+    }
+
+    .status-account {
+      width: get-vw(335px);
+      margin-left: get-vw(25px);
+    }
+  }
+}
