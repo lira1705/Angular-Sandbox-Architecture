@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { Observable, ReplaySubject, Subject } from 'rxjs';
 import { BotModel } from '../shared/models/bot-list.model';
 
 export enum ListOrder {
@@ -17,7 +17,7 @@ export class BotListController {
 
   private readonly favoriteListSubject: Subject<BotModel[]> = new Subject<BotModel[]>();
   private readonly notFavoriteListSubject: Subject<BotModel[]> = new Subject<BotModel[]>();
-  private readonly isListModeSubject: Subject<boolean> = new Subject<boolean>();
+  private readonly isListModeSubject: ReplaySubject<boolean> = new ReplaySubject<boolean>(1);
   private readonly map = new Map<string, () => void>();
   private botList: BotModel[] = [];
   private favoriteList: BotModel[] = [];
@@ -40,7 +40,7 @@ export class BotListController {
     return this.isListModeSubject.asObservable();
   }
 
-  public setIsListMode(listMode: ListMode): void {
+  public setListMode(listMode: ListMode): void {
     if (listMode !== ListMode.LIST) {
       this.isListModeSubject.next(false);
     } else {
@@ -49,11 +49,13 @@ export class BotListController {
   }
 
   public setBotList(botList: BotModel[]): void {
-    this.botList = botList;
-    this.botList = this.orderByName(this.botList);
-    this.favoriteList = this.botList.filter(item => item.favorite === true) || [];
-    this.notFavoriteList = this.botList.filter(item => item.favorite !== true) || [];
-    this.isListModeSubject.next(true);
+    if(this.botList.length === 0) {
+      this.botList = botList;
+      this.botList = this.orderByName(this.botList);
+      this.favoriteList = this.botList.filter(item => item.favorite === true) || [];
+      this.notFavoriteList = this.botList.filter(item => item.favorite !== true) || [];
+      this.isListModeSubject.next(true);
+    }
     this.favoriteListSubject.next(this.favoriteList);
     this.notFavoriteListSubject.next(this.notFavoriteList);
   }

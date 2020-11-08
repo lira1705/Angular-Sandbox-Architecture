@@ -1,6 +1,6 @@
 <div class="list-container" *ngIf="isListView">
   <div class="favorite-container">
-    <div class="bot-item" *ngFor="let bot of favoriteBotList">
+    <div class="bot-item" *ngFor="let bot of favoriteBotList" (click)="changeRoute()">
       <div class="favorite-container">
         <img src="../../../assets/images/star.png" (click)="unsetFavorite(bot)">
       </div>
@@ -21,7 +21,7 @@
   <div class="divider" *ngIf="favoriteBotList.length && notFavoriteBotList.length"></div>
 
   <div class=non-favorite-container>
-    <div class="bot-item" *ngFor="let bot of notFavoriteBotList">
+    <div class="bot-item" *ngFor="let bot of notFavoriteBotList" (click)="changeRoute()">
       <div class="favorite-container">
         <img src="../../../assets/images/favorite.png" (click)="setFavorite(bot)">
       </div>
@@ -41,7 +41,7 @@
 </div> 
 <div class="cards-container" *ngIf="!isListView">
   <div class="container">
-    <div class="bot-item" *ngFor="let bot of favoriteBotList">
+    <div class="bot-item" *ngFor="let bot of favoriteBotList" (click)="changeRoute()">
       <div class="star-icon">
         <img src="../../../assets/images/star.png" (click)="unsetFavorite(bot)">
       </div>
@@ -56,7 +56,7 @@
   <div class="divider" *ngIf="favoriteBotList.length && notFavoriteBotList.length"></div>
 
   <div class=container>
-    <div class="bot-item" *ngFor="let bot of notFavoriteBotList">
+    <div class="bot-item" *ngFor="let bot of notFavoriteBotList" (click)="changeRoute()">
       <div class="star-icon">
         <img src="../../../assets/images/favorite.png" (click)="setFavorite(bot)">
       </div>

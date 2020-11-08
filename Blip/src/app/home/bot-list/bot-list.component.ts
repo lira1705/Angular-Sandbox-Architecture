@@ -1,36 +1,51 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy } from '@angular/core';
 import { BotModel } from 'src/app/shared/models/bot-list.model';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { BotListSandbox } from './bot-list.sandbox';
-import { ListOrder } from '../bot-list.controller';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-bot-list',
   templateUrl: './bot-list.component.html',
   styleUrls: ['./bot-list.component.scss']
 })
-export class BotListComponent implements OnInit {
+export class BotListComponent implements OnDestroy {
   public favoriteBotList: BotModel[] = [];
   public notFavoriteBotList: BotModel[] = [];
   public isListView: boolean;
+  private isListSubscription: Subscription;
+  private favoriteListSubscription: Subscription;
+  private notFavoriteListSubscription: Subscription;
 
   constructor(
     private sanitizer: DomSanitizer,
-    private botListSandbox: BotListSandbox
+    private botListSandbox: BotListSandbox,
+    private router: Router
   ) {
-    this.botListSandbox.getIsListMode().subscribe(isListView => {
+    this.isListSubscription = this.botListSandbox.getIsListMode().subscribe(isListView => {
+      console.log('here');
       this.isListView = isListView;
     })
-    this.botListSandbox.getFavoriteBotList().subscribe(botList => {
+    this.favoriteListSubscription = this.botListSandbox.getFavoriteBotList().subscribe(botList => {
       this.favoriteBotList = botList;
     });
-    this.botListSandbox.getNotFavoriteBotList().subscribe(botList => {
+    this.notFavoriteListSubscription = this.botListSandbox.getNotFavoriteBotList().subscribe(botList => {
       this.notFavoriteBotList = botList;
     });
     this.botListSandbox.setupBotList();
   }
 
-  ngOnInit(): void {
+  ngOnDestroy(): void {
+    if (this.isListSubscription) {
+      this.isListSubscription.unsubscribe();
+    }
+    if (this.favoriteListSubscription) {
+      this.favoriteListSubscription.unsubscribe();
+    }
+    if (this.notFavoriteListSubscription) {
+      this.notFavoriteListSubscription.unsubscribe();
+    }
   }
 
   public transform(base64Image: string): SafeResourceUrl {
@@ -51,5 +66,9 @@ export class BotListComponent implements OnInit {
 
   public unsetFavorite(bot: BotModel): void {
     this.botListSandbox.unsetFavorite(bot);
+  }
+
+  public changeRoute(): void {
+    this.router.navigate(['detail']);
   }
 }

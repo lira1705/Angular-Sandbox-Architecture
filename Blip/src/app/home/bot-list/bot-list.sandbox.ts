@@ -37,16 +37,4 @@ export class BotListSandbox {
   public unsetFavorite(bot: BotModel): void {
     this.botListController.unsetFavorite(bot);
   }
-
-  public setListOrder(order: ListOrder): void {
-    this.botListController.setListOrder(order);
-  }
-
-  public setListMode(listMode: ListMode): void {
-    this.botListController.setIsListMode(listMode);
-  }
-
-  public search(text: string): void {
-    this.botListController.search(text);
-  }
 }

@@ -10,13 +10,17 @@ import { BotListService } from './shared/services/bot-list.service';
 import { BotListSandbox } from './home/bot-list/bot-list.sandbox';
 import { BotListController } from './home/bot-list.controller';
 import { FormsModule } from '@angular/forms';
+import { DetailComponent } from './detail/detail.component';
+import { ListManagerSandbox } from './home/list-manager/list-manager.sandbox';
+import { ListManagerController } from './home/list-manager/list-manager.controller';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ListManagerComponent,
-    BotListComponent
+    BotListComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +30,9 @@ import { FormsModule } from '@angular/forms';
   providers: [
     BotListService,
     BotListSandbox,
-    BotListController
+    BotListController,
+    ListManagerSandbox,
+    ListManagerController
   ],
   bootstrap: [AppComponent]
 })
