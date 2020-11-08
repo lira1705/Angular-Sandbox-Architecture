@@ -6,7 +6,7 @@ export class BotModel  {
   private static readonly NAME_KEY = 'name';
   private static readonly DESCRIPTION_KEY = 'description';
   private static readonly IMAGE_KEY = 'image';
-  private static readonly TEMPLATE_KEY = 'master';
+  private static readonly TEMPLATE_KEY = 'template';
   private static readonly CREATED_KEY = 'created';
   private static readonly UPDATED_KEY = 'updated';
   private static readonly PLAN_KEY = 'plan';
