@@ -10,7 +10,7 @@
   width: 100%;
   margin: get-vw(43px) get-vw(66px) 0 get-vw(82px);
 
-  .bot-profile {
+  .bot-header {
     display: flex;
     flex-direction: row;
     height: get-vw(78px);
@@ -40,7 +40,7 @@
         }
       }
 
-      .bot-id {
+      .bot-name-container {
         display: flex;
         flex-direction: column;
         justify-content: center;

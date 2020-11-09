@@ -1,17 +1,16 @@
 <div class="detail-container">
   <!-- <button (click)="changeRoute()">hey</button>  -->
-  <div class="bot-profile">
+  <div class="bot-header">
     <div class="bot-avatar">
       <div class="logo-container">
         <img class="logo-image" src="../../assets/images/blip.png">
       </div>
-      <!-- <img class="bot-image" [src]="transform(bot.image)"> -->
-      <div class=bot-id>
+      <div class=bot-name-container>
         <p class="bot-name-title">
-          Botname
+          {{ 'DETAIL_COMPONENT.BOT_NAME_TITLE' | getHardCoded }}
         </p>
         <p class="bot-name">
-          id: {{ bot.name }}
+          {{ 'DETAIL_COMPONENT.ID' | getHardCoded }}{{ bot.name }}
         </p>
       </div>
     </div>
@@ -22,10 +21,10 @@
   <div class="bot-details">
     <div class="bot-analytics">
       <div class="region-panel analytics-panel">
-        <p class="region-title title">Region and idiom</p>
+        <p class="region-title title">{{ 'DETAIL_COMPONENT.REGION_AND_IDIOM' | getHardCoded }}</p>
         <p class="region-value value">{{ languageDetail }}</p>
-        <p class="timezone-title title">Timezone</p>
-        <p class="timezone-value">(UTC - 03:00) Brasília</p>
+        <p class="timezone-title title">{{ 'DETAIL_COMPONENT.TIMEZONE' | getHardCoded }}</p>
+        <p class="timezone-value">{{ 'DETAIL_COMPONENT.UTC' | getHardCoded }}</p>
       </div>
       <div class="active-users-panel analytics-panel panel-content">
         <div class="img-container active-users-img">
@@ -33,7 +32,7 @@
         </div>
         <div class="content-data">
           <p class="data-value">{{ activeUsers }}</p>
-          <p class="data-type">Active users</p>
+          <p class="data-type">{{ 'DETAIL_COMPONENT.ACTIVE_USERS' | getHardCoded }}</p>
         </div>
       </div>
       <div class="received-messages-panel analytics-panel panel-content">
@@ -42,7 +41,7 @@
         </div>
         <div class="content-data">
           <p class="data-value">{{ receivedMessages }}</p>
-          <p class="data-type">Received messages</p>
+          <p class="data-type">{{ 'DETAIL_COMPONENT.RECEIVED_MESSAGES' | getHardCoded }}</p>
         </div>
       </div>
       <div class="sent-messages-panel analytics-panel panel-content">
@@ -51,14 +50,14 @@
         </div>
         <div class="content-data">
           <p class="data-value">{{ sentMessages }}</p>
-          <p class="data-type">Sent messages</p>
+          <p class="data-type">{{ 'DETAIL_COMPONENT.SENT_MESSAGES' | getHardCoded }}</p>
         </div>
       </div>
   </div>
   <div class="status-account">
     <img class="status-account-img" src="../../assets/images/plano.png">
-    <p class="status-account-title">Status account</p>
-    <p class="status-account-value">Free</p>
-    <button class="btn btn-primary update-account-button">Update account</button>
+    <p class="status-account-title">{{ 'DETAIL_COMPONENT.STATUS_ACCOUNT' | getHardCoded }}</p>
+    <p class="status-account-value">{{ bot.plan }}</p>
+    <button class="btn btn-primary update-account-button">{{ 'DETAIL_COMPONENT.UPDATE_ACCOUNT' | getHardCoded }}</button>
   </div>
 </div>

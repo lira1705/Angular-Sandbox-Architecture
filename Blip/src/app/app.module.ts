@@ -15,6 +15,7 @@ import { ListManagerSandbox } from './home/list-manager/list-manager.sandbox';
 import { ListManagerController } from './home/list-manager/list-manager.controller';
 import { DetailSandbox } from './detail/detail.sandbox';
 import { DetailController } from './detail/detail.controller';
+import { GetHardCodedPipe } from './shared/pipes/get-hardcodeds.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DetailController } from './detail/detail.controller';
     HomeComponent,
     ListManagerComponent,
     BotListComponent,
-    DetailComponent
+    DetailComponent,
+    GetHardCodedPipe
   ],
   imports: [
     BrowserModule,
