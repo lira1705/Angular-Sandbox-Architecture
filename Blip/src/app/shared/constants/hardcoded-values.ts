@@ -22,5 +22,9 @@ export const hardcodedValues = {
     SENT_MESSAGES: 'Sent messages',
     STATUS_ACCOUNT: 'Status account',
     UPDATE_ACCOUNT: 'Update account'
+  },
+  TEST: 'test',
+  NESTED_TEST: {
+    TEST: 'nested test'
   }
 }
