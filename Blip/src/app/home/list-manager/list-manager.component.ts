@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ListMode, ListOrder } from '../bot-list.controller';
+import { ListMode } from '../../shared/enum/list-mode.enum';
+import { ListOrder} from '../../shared/enum/list-order.enum'; 
 import { ListManagerSandbox } from './list-manager.sandbox';
 
 @Component({

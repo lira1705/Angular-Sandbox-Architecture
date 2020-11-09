@@ -8,7 +8,7 @@ import { ListManagerComponent } from './home/list-manager/list-manager.component
 import { BotListComponent } from './home/bot-list/bot-list.component';
 import { BotListService } from './shared/services/bot-list.service';
 import { BotListSandbox } from './home/bot-list/bot-list.sandbox';
-import { BotListController } from './home/bot-list.controller';
+import { BotListController } from './home/bot-list/bot-list.controller';
 import { FormsModule } from '@angular/forms';
 import { DetailComponent } from './detail/detail.component';
 import { ListManagerSandbox } from './home/list-manager/list-manager.sandbox';

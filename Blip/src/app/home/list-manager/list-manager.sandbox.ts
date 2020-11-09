@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { BotListController, ListMode } from '../bot-list.controller';
-import { ListOrder } from '../bot-list.controller';
+import { ListMode } from '../../shared/enum/list-mode.enum';
+import { ListOrder} from '../../shared/enum/list-order.enum'; 
+import { BotListController } from '../bot-list/bot-list.controller';
 import { ListManagerController } from './list-manager.controller';
 
 @Injectable()

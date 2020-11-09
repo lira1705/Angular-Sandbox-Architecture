@@ -1,16 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable, ReplaySubject, Subject } from 'rxjs';
-import { BotModel } from '../shared/models/bot-list.model';
-
-export enum ListOrder {
-  ORDER_BY_DATE = 'date',
-  ORDER_BY_NAME = 'name'
-}
-
-export enum ListMode {
-  CARDS = 'cards',
-  LIST = 'list'
-}
+import { ListMode } from '../../shared/enum/list-mode.enum';
+import { ListOrder } from '../../shared/enum/list-order.enum';
+import { BotModel } from '../../shared/models/bot-list.model';
 
 @Injectable()
 export class BotListController {

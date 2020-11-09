@@ -1,9 +1,8 @@
 import {BotListService} from '../../shared/services/bot-list.service';
 import { Injectable } from '@angular/core';
-import { BotListController, ListMode } from '../bot-list.controller';
+import { BotListController } from './bot-list.controller';
 import { Observable } from 'rxjs';
 import { BotModel } from '../../shared/models/bot-list.model';
-import { ListOrder } from '../bot-list.controller';
 
 @Injectable()
 export class BotListSandbox {
@@ -14,7 +13,7 @@ export class BotListSandbox {
   ) {
   }
 
-  public setupBotList() {
+  public setupBotList(): void {
     this.botListController.setBotList(this.botListService.getBotList());
   }
 
