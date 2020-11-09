@@ -33,7 +33,10 @@ export class DetailComponent implements OnDestroy {
     }
   }
 
-  public displayCreated(date: Date): string {
+  public displayCreated(date: Date | null): string {
+    if(date === null) {
+      return '';
+    }
     const monthFixer = 1;
     const day = date.getUTCDate();
     const month = date.getUTCMonth() + monthFixer;

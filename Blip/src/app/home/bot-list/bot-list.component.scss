@@ -1,7 +1,12 @@
 @import "../../../assets/styles/utils/functions.scss";
 
 
-
+p.list-title {
+  width: 100%;
+  font-size: get-vw(34px);
+  font-weight: bold;
+  color: #63749b;
+}
 .list-container {
   margin-top: get-vw(108px);
 

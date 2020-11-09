@@ -124,6 +124,20 @@ export class BotListController {
 
   private orderByDate(list: BotModel[]): BotModel[] {
     return list.sort((bot1, bot2) => {
+      if(bot1.created === null || bot2.created === null) {
+
+        if(bot1.created === null && bot2.created === null) {
+          return 0;
+        }
+
+        if ( bot1.created === null) {
+          return 1;
+        }
+  
+        if (bot2.created === null) {
+          return -1;
+        }
+      }
       return bot1.created.getTime() - bot2.created.getTime();
     });
   }

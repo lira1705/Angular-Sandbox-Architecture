@@ -1,3 +1,4 @@
+<p *ngIf="favoriteBotList.length" class="list-title">{{ 'HOME_COMPONENT.FAVORITES' | getHardCoded }}</p>
 <div class="list-container" *ngIf="isListView">
   <div class="favorite-container">
     <div class="bot-item" *ngFor="let bot of favoriteBotList">

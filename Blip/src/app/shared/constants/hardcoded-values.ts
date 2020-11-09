@@ -4,7 +4,7 @@ export const hardcodedValues = {
     TERMS_OF_USE: 'Terms of use'
   },
   HOME_COMPONENT : {
-    FAVORITES: 'Favorities'
+    FAVORITES: 'Favorites'
   },
   LIST_MANAGER: {
     MY_CHATBOTS: 'My chatbots',
