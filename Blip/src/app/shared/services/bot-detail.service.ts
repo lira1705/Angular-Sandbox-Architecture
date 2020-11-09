@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BotModel } from '../models/bot-list.model';
+import { BotModel } from '../models/bot.model';
 
 @Injectable({
   providedIn: 'root'

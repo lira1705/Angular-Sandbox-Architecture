@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { BotModel } from '../shared/models/bot-list.model';
+import { BotModel } from '../shared/models/bot.model';
 
 @Injectable()
 export class DetailController {

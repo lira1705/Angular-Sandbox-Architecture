@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BotModel } from '../models/bot-list.model'
+import { BotModel } from '../models/bot.model'
 import data from '../../../assets/data.json';
 
 @Injectable({
@@ -7,11 +7,17 @@ import data from '../../../assets/data.json';
 })
 export class BotListService {
 
+  private botList: BotModel[];
+
   constructor() {
-    this.getBotList();
+    this.botList = this.extractBotList();
+  }
+
+  private extractBotList(): BotModel[] {
+    return BotModel.fromList(data);
   }
 
   public getBotList(): BotModel[] {
-    return BotModel.fromList(data);
+    return this.botList;
   }
 }

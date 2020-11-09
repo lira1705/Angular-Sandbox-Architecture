@@ -1,6 +1,6 @@
 import { Component, OnDestroy} from '@angular/core';
 import { Subscription } from 'rxjs';
-import { BotModel } from '../shared/models/bot-list.model';
+import { BotModel } from '../shared/models/bot.model';
 import { DetailSandbox } from './detail.sandbox';
 
 @Component({
@@ -22,7 +22,6 @@ export class DetailComponent implements OnDestroy {
   ) {
       this.botSubscription = this.detailSandbox.getBot().subscribe(bot => {
         this.bot = bot;
-        console.log(this.bot.created.toTimeString());
         this.fillDetailFields();
       })
       this.detailSandbox.setupBot();

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { BotModel } from '../shared/models/bot-list.model';
 
 
 @Component({

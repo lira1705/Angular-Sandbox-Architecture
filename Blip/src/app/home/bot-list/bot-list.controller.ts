@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, ReplaySubject, Subject } from 'rxjs';
 import { ListMode } from '../../shared/enum/list-mode.enum';
 import { ListOrder } from '../../shared/enum/list-order.enum';
-import { BotModel } from '../../shared/models/bot-list.model';
+import { BotModel } from '../../shared/models/bot.model';
 
 @Injectable()
 export class BotListController {

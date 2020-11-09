@@ -1,5 +1,5 @@
 import { Component, Input, OnDestroy } from '@angular/core';
-import { BotModel } from 'src/app/shared/models/bot-list.model';
+import { BotModel } from 'src/app/shared/models/bot.model';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { BotListSandbox } from './bot-list.sandbox';
 import { Router } from '@angular/router';

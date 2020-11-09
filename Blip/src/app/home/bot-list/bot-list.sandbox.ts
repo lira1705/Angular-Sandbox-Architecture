@@ -2,7 +2,7 @@ import {BotListService} from '../../shared/services/bot-list.service';
 import { Injectable } from '@angular/core';
 import { BotListController } from './bot-list.controller';
 import { Observable } from 'rxjs';
-import { BotModel } from '../../shared/models/bot-list.model';
+import { BotModel } from '../../shared/models/bot.model';
 
 @Injectable()
 export class BotListSandbox {
