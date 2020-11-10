@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { BotModel } from 'src/app/shared/models/bot.model';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { BotListSandbox } from './bot-list.sandbox';
@@ -11,7 +11,7 @@ import { BotDetailService } from 'src/app/shared/services/bot-detail.service';
   templateUrl: './bot-list.component.html',
   styleUrls: ['./bot-list.component.scss']
 })
-export class BotListComponent implements OnDestroy {
+export class BotListComponent implements OnDestroy, OnInit {
   public favoriteBotList: BotModel[] = [];
   public notFavoriteBotList: BotModel[] = [];
   public isListView: boolean;
@@ -21,10 +21,10 @@ export class BotListComponent implements OnDestroy {
 
   constructor(
     private sanitizer: DomSanitizer,
-    private botListSandbox: BotListSandbox,
-    private router: Router,
-    private botDetailService: BotDetailService
-  ) {
+    private botListSandbox: BotListSandbox
+  ) { }
+
+  public ngOnInit(): void {
     this.isListSubscription = this.botListSandbox.getIsListMode().subscribe(isListView => {
       this.isListView = isListView;
     })
@@ -73,7 +73,6 @@ export class BotListComponent implements OnDestroy {
   }
 
   public accessBotDetail(bot: BotModel): void {
-    this.botDetailService.setBot(bot);
-    this.router.navigate(['detail']);
+    this.botListSandbox.setBotDetail(bot);
   }
 }

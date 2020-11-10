@@ -39,12 +39,11 @@ describe('DetailComponent', () => {
     fixture = TestBed.createComponent(DetailComponent);
     detailComponent = fixture.componentInstance;
     botSubject = new Subject<BotModel>();
+    detailSandboxSpy.getBot = jasmine.createSpy().and.returnValue(botSubject.asObservable());
+    detailSandboxSpy.getLanguage = jasmine.createSpy().and.returnValue(languageDetail);
   })
 
   it('should fill detail fields', () => {
-    detailSandboxSpy.getBot = jasmine.createSpy().and.returnValue(botSubject.asObservable());
-    detailSandboxSpy.getLanguage = jasmine.createSpy().and.returnValue(languageDetail);
-    
     detailComponent.ngOnInit();
     
     botSubject.next(bot);
@@ -55,24 +54,12 @@ describe('DetailComponent', () => {
   });
 
   it('should display created at message', () => {
-    detailSandboxSpy.getBot = jasmine.createSpy().and.returnValue(botSubject.asObservable());
-    detailSandboxSpy.getLanguage = jasmine.createSpy().and.returnValue(languageDetail);
-    
-    detailComponent.ngOnInit();
-    
-    botSubject.next(bot);
     const createdAtMessage = detailComponent.displayCreated(bot.created);
     expect(createdAtMessage).toEqual('Created at 31/1/2020');
   });
 
   it('should display nothing on created at message', () => {
     const botWithoutCreatedAt = BotModel.fromObject(botWithoutCreatedAtJson);
-    detailSandboxSpy.getBot = jasmine.createSpy().and.returnValue(botSubject.asObservable());
-    detailSandboxSpy.getLanguage = jasmine.createSpy().and.returnValue(languageDetail);
-    
-    detailComponent.ngOnInit();
-    
-    botSubject.next(botWithoutCreatedAt);
     const createdAtMessage = detailComponent.displayCreated(botWithoutCreatedAt.created);
     expect(createdAtMessage).toEqual('');
   });

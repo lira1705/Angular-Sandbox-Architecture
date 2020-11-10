@@ -3,13 +3,17 @@ import { Injectable } from '@angular/core';
 import { BotListController } from './bot-list.controller';
 import { Observable } from 'rxjs';
 import { BotModel } from '../../shared/models/bot.model';
+import { BotDetailService } from 'src/app/shared/services/bot-detail.service';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class BotListSandbox {
 
   constructor(
     private botListService: BotListService,
-    private botListController: BotListController 
+    private botListController: BotListController,
+    private botDetailService: BotDetailService,
+    private router: Router
   ) {
   }
 
@@ -35,5 +39,10 @@ export class BotListSandbox {
 
   public unsetFavorite(bot: BotModel): void {
     this.botListController.unsetFavorite(bot);
+  }
+
+  public setBotDetail(bot: BotModel): void {
+    this.botDetailService.setBot(bot);
+    this.router.navigate(['detail']);
   }
 }
