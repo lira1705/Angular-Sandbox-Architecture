@@ -1,4 +1,4 @@
-import { Component, OnDestroy} from '@angular/core';
+import { Component, OnDestroy, OnInit} from '@angular/core';
 import { Subscription } from 'rxjs';
 import { BotModel } from '../shared/models/bot.model';
 import { DetailSandbox } from './detail.sandbox';
@@ -8,7 +8,7 @@ import { DetailSandbox } from './detail.sandbox';
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.scss']
 })
-export class DetailComponent implements OnDestroy {
+export class DetailComponent implements OnDestroy, OnInit {
   public bot: BotModel;
   public activeUsers:number;
   public receivedMessages:number;
@@ -19,15 +19,17 @@ export class DetailComponent implements OnDestroy {
 
   constructor(
     private detailSandbox: DetailSandbox
-  ) {
-      this.botSubscription = this.detailSandbox.getBot().subscribe(bot => {
-        this.bot = bot;
-        this.fillDetailFields();
-      })
-      this.detailSandbox.setupBot();
-   }
+  ) { }
 
-  ngOnDestroy(): void {
+  public ngOnInit(): void {
+    this.botSubscription = this.detailSandbox.getBot().subscribe(bot => {
+      this.bot = bot;
+      this.fillDetailFields();
+    })
+    this.detailSandbox.setupBot();
+  }
+
+  public ngOnDestroy(): void {
     if (this.botSubscription) {
       this.botSubscription.unsubscribe();
     }
