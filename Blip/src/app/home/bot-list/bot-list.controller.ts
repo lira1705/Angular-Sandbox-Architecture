@@ -81,7 +81,8 @@ export class BotListController {
   }
 
   private shiftBot(bot: BotModel, toList: BotModel[], fromList: BotModel[]) {
-    fromList = fromList.filter(item => item.id !== bot.id);
+    const index = fromList.findIndex(item => item.id === bot.id);
+    fromList.splice(index, 1);
     toList.push(bot);
     if (this.listOrderView === ListOrder.ORDER_BY_DATE) {
       toList = this.orderByDate(toList);
