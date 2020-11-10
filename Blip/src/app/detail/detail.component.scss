@@ -85,6 +85,10 @@
         background-color: #ffffff;
         box-shadow: 0 get-vw(1px) get-vw(2px) 0 rgba(0, 0, 0, 0.2), 0 get-vw(2px) get-vw(5px) 0 rgba(0, 0, 0, 0.19);
         border-radius: get-vw(12px);
+
+        &:hover {
+          box-shadow: 0 get-vw(2px) get-vw(4px) 0 rgba(0, 0, 0, 0.2), 0 get-vw(5px) get-vw(10px) 0 rgba(0, 0, 0, 0.19);
+        }
       }
 
       .region-panel {
