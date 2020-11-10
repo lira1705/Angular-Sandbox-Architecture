@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { BotModel } from '../../shared/models/bot.model';
 import { BotDetailService } from 'src/app/shared/services/bot-detail.service';
 import { Router } from '@angular/router';
+import { RouteConstants } from 'src/app/shared/constants/route-constants';
 
 @Injectable()
 export class BotListSandbox {
@@ -43,6 +44,6 @@ export class BotListSandbox {
 
   public setBotDetail(bot: BotModel): void {
     this.botDetailService.setBot(bot);
-    this.router.navigate(['detail']);
+    this.router.navigate([RouteConstants.DETAIL_ROUTE]);
   }
 }
