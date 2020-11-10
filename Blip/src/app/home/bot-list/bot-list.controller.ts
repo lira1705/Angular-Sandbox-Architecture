@@ -123,7 +123,7 @@ export class BotListController {
     this.botList = orderBy(this.botList);
   }
 
-  private orderByName(list: BotModel[]): BotModel[] {
+  public orderByName(list: BotModel[]): BotModel[] {
     return list.sort((bot1, bot2) => {
       if(bot1.name < bot2.name) { 
         return -1; 
