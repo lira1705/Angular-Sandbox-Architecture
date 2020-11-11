@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { RouteConstants } from './shared/constants/route-constants';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,10 @@ export class AppComponent implements OnInit{
           return;
       }
       window.scrollTo(0, 0)
-  });
+    });
+  }
+
+  public goToHome(): void {
+    this.router.navigate([RouteConstants.HOME_ROUTE]);
   }
 }

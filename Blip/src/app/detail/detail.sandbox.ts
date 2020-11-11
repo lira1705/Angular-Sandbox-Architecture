@@ -9,7 +9,7 @@ export class DetailSandbox {
 
   constructor(
     private detailController: DetailController,
-    private botDetailService: BotDetailService, 
+    private botDetailService: BotDetailService,
   ) {
   }
 

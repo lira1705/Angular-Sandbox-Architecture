@@ -69,7 +69,7 @@ export class BotListComponent implements OnDestroy, OnInit {
     this.botListSandbox.unsetFavorite(bot);
   }
 
-  public accessBotDetail(bot: BotModel): void {
-    this.botListSandbox.setBotDetail(bot);
+  public gotToBotDetail(bot: BotModel): void {
+    this.botListSandbox.gotToBotDetail(bot);
   }
 }

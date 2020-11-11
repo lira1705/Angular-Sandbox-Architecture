@@ -42,7 +42,7 @@ export class BotListSandbox {
     this.botListController.unsetFavorite(bot);
   }
 
-  public setBotDetail(bot: BotModel): void {
+  public gotToBotDetail(bot: BotModel): void {
     this.botDetailService.setBot(bot);
     this.router.navigate([RouteConstants.DETAIL_ROUTE]);
   }
