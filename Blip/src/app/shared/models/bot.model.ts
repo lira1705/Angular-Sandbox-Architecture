@@ -21,8 +21,8 @@ export class BotModel  {
     public description: string,
     public image: string,
     public template: string,
-    public created: Date | null,
-    public updated: Date | null,
+    public created: Date,
+    public updated: Date,
     public plan: string,
     public culture: string,
     public analytics: AnalyticsInterface,
@@ -37,8 +37,8 @@ export class BotModel  {
     const description = obj[BotModel.DESCRIPTION_KEY];
     const image = obj[BotModel.IMAGE_KEY];
     const template = obj[BotModel.TEMPLATE_KEY];
-    const created = this.validateDate(obj[BotModel.CREATED_KEY]);
-    const updated = this.validateDate(obj[BotModel.UPDATED_KEY]);
+    const created = new Date(obj[BotModel.CREATED_KEY]);
+    const updated = new Date(obj[BotModel.UPDATED_KEY]);
     const plan = obj[BotModel.PLAN_KEY];
     const culture = obj[BotModel.CULTURE_KEY];
     const analytics = obj[BotModel.ANALYTICS_KEY];
@@ -53,12 +53,5 @@ export class BotModel  {
       botList.push(BotModel.fromObject(obj));
     }
     return botList;
-  }
-
-  public static validateDate(date: string): Date | null {
-    if(moment(date, true).isValid()) {
-      return moment(date).toDate();;
-    }
-    return null;
   }
 }

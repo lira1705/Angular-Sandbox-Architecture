@@ -5,7 +5,6 @@ import { DetailSandbox } from 'src/app/detail/detail.sandbox';
 import { BotModel } from 'src/app/shared/models/bot.model';
 import { GetHardCodedPipe } from 'src/app/shared/pipes/get-hardcodeds.pipe';
 import botJson from './resources/bot.json';
-import botWithoutCreatedAtJson from './resources/bot-without-created.json';
 
 describe('DetailComponent', () => {
   const DETAIL_SANDBOX = 'DetailSandbox';
@@ -56,11 +55,5 @@ describe('DetailComponent', () => {
   it('should display created at message', () => {
     const createdAtMessage = detailComponent.displayCreated(bot.created);
     expect(createdAtMessage).toEqual('Created at 31/1/2020');
-  });
-
-  it('should display nothing on created at message', () => {
-    const botWithoutCreatedAt = BotModel.fromObject(botWithoutCreatedAtJson);
-    const createdAtMessage = detailComponent.displayCreated(botWithoutCreatedAt.created);
-    expect(createdAtMessage).toEqual('');
   });
 });

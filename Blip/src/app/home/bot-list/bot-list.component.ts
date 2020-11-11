@@ -53,10 +53,7 @@ export class BotListComponent implements OnDestroy, OnInit {
     return this.sanitizer.bypassSecurityTrustResourceUrl(base64Image);
   }
 
-  public displayCreated(date: Date | null): string {
-    if(date === null) {
-      return '';
-    }
+  public displayCreated(date: Date): string {
     const monthFixer = 1;
     const day = date.getUTCDate();
     const month = date.getUTCMonth() + monthFixer;

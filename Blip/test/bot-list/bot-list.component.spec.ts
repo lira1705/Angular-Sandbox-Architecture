@@ -7,7 +7,6 @@ import { Sanitizer } from '@angular/core';
 import { BotModel } from 'src/app/shared/models/bot.model';
 import botListJson from './resources/data.json';
 import botJson from './resources/bot.json';
-import botWithoutCreatedAtJson from './resources/bot-without-created.json';
 
 describe('BotListComponent', () => {
   const BOX_LIST_SANDBOX = 'BotListSandbox';
@@ -87,11 +86,5 @@ describe('BotListComponent', () => {
   it('should display created at message', () => {
     const createdAtMessage = botListComponent.displayCreated(bot.created);
     expect(createdAtMessage).toEqual('Created at 31/1/2020');
-  });
-
-  it('should display nothing on created at message', () => {
-    const botWithoutCreatedAt = BotModel.fromObject(botWithoutCreatedAtJson);
-    const createdAtMessage = botListComponent.displayCreated(botWithoutCreatedAt.created);
-    expect(createdAtMessage).toEqual('');
   });
 });
