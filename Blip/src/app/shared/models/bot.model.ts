@@ -40,7 +40,7 @@ export class BotModel  {
     const template = obj[BotModel.TEMPLATE_KEY];
     const created = new Date(obj[BotModel.CREATED_KEY]);
     const updated = new Date(obj[BotModel.UPDATED_KEY]);
-    const timezone = this.getTimezone(created);
+    const timezone = this.getTimezone(obj[BotModel.CREATED_KEY]);
     const plan = obj[BotModel.PLAN_KEY];
     const culture = obj[BotModel.CULTURE_KEY];
     const analytics = obj[BotModel.ANALYTICS_KEY];
@@ -59,9 +59,9 @@ export class BotModel  {
     return botList;
   }
 
-  private static getTimezone(date: Date): string {
-    let timezone = date.getTimezoneOffset();
-    timezone = (timezone/60) * -1;
+  private static getTimezone(date: string): string {
+    let timezone = moment.parseZone(date).utcOffset();
+    timezone = (timezone/60);
     return String(timezone);
   }
 }
