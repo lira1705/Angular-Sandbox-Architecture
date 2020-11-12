@@ -3,6 +3,7 @@ import { Subject } from 'rxjs';
 import { DetailComponent } from "src/app/detail/detail.component";
 import { DetailSandbox } from 'src/app/detail/detail.sandbox';
 import { BotModel } from 'src/app/shared/models/bot.model';
+import { getFormattedGMTPipe } from 'src/app/shared/pipes/get-gmt.pipe';
 import { GetHardCodedPipe } from 'src/app/shared/pipes/get-hardcodeds.pipe';
 import botJson from './resources/bot.json';
 
@@ -30,7 +31,7 @@ describe('DetailComponent', () => {
       providers: [ {
         provide: DetailSandbox, useValue: detailSandboxMock
       }],
-      declarations: [ DetailComponent, GetHardCodedPipe]
+      declarations: [ DetailComponent, GetHardCodedPipe, getFormattedGMTPipe]
     }).compileComponents();
 
     detailSandboxSpy = TestBed.inject(DetailSandbox);

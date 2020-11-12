@@ -16,6 +16,7 @@ import { ListManagerController } from './home/list-manager/list-manager.controll
 import { DetailSandbox } from './detail/detail.sandbox';
 import { DetailController } from './detail/detail.controller';
 import { GetHardCodedPipe } from './shared/pipes/get-hardcodeds.pipe';
+import { getFormattedGMTPipe } from './shared/pipes/get-gmt.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { GetHardCodedPipe } from './shared/pipes/get-hardcodeds.pipe';
     ListManagerComponent,
     BotListComponent,
     DetailComponent,
-    GetHardCodedPipe
+    GetHardCodedPipe,
+    getFormattedGMTPipe
   ],
   imports: [
     BrowserModule,

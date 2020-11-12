@@ -16,14 +16,6 @@ export class GetHardCodedPipe implements PipeTransform {
         }
         if (hardcodedValue) {
           return hardcodedValue;
-        } else {
-          console.error(
-            `
-            No properly value set for key '${value}'.
-            Please, check available keys.
-            Feel free to add new one if you need.
-            `
-          );
         }
       }
     }

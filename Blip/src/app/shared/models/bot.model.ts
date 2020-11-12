@@ -23,6 +23,7 @@ export class BotModel  {
     public template: string,
     public created: Date,
     public updated: Date,
+    public timezone: string,
     public plan: string,
     public culture: string,
     public analytics: AnalyticsInterface,
@@ -39,12 +40,15 @@ export class BotModel  {
     const template = obj[BotModel.TEMPLATE_KEY];
     const created = new Date(obj[BotModel.CREATED_KEY]);
     const updated = new Date(obj[BotModel.UPDATED_KEY]);
+    const timezone = this.getTimezone(created);
     const plan = obj[BotModel.PLAN_KEY];
     const culture = obj[BotModel.CULTURE_KEY];
     const analytics = obj[BotModel.ANALYTICS_KEY];
     const favorite = false;
 
-    return new BotModel(id, shortName, name, description, image, template, created, updated, plan, culture, analytics, favorite);
+    return new BotModel(
+      id, shortName, name, description, image, template, created, updated, timezone, plan, culture, analytics, favorite
+    );
   }
 
   public static fromList(objList: object[]): BotModel[] {
@@ -53,5 +57,11 @@ export class BotModel  {
       botList.push(BotModel.fromObject(obj));
     }
     return botList;
+  }
+
+  private static getTimezone(date: Date): string {
+    let timezone = date.getTimezoneOffset();
+    timezone = (timezone/60) * -1;
+    return String(timezone);
   }
 }

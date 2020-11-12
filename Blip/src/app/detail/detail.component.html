@@ -24,7 +24,7 @@
         <p class="region-title title">{{ 'DETAIL_COMPONENT.REGION_AND_IDIOM' | getHardCoded }}</p>
         <p class="region-value value">{{ languageDetail }}</p>
         <p class="timezone-title title">{{ 'DETAIL_COMPONENT.TIMEZONE' | getHardCoded }}</p>
-        <p class="timezone-value">{{ 'DETAIL_COMPONENT.UTC' | getHardCoded }}</p>
+        <p class="timezone-value">{{ bot.timezone | getFormattedGMT }}</p>
       </div>
       <div class="active-users-panel analytics-panel panel-content">
         <div class="img-container active-users-img">
